@@ -1,8 +1,8 @@
 package concurrent;
 
 public class DeadLock {
-    private static Object A = new Object();
-    private static Object B = new Object();
+    private static final Object A = new Object();
+    private static final Object B = new Object();
 
     public static void main(String[] args) {
 
