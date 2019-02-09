@@ -1,5 +1,7 @@
 package concurrent;
 
+import sun.misc.Unsafe;
+
 import java.util.HashMap;
 import java.util.concurrent.locks.Condition;
 
@@ -10,6 +12,7 @@ public class MyLock {
         private volatile int state = 0;
         private Thread exclusiveOwnerThread;
         private Condition condition;
+        private Unsafe unsafe ;
 
         public int getState() {
             return state;
@@ -49,6 +52,10 @@ public class MyLock {
             }
         }
 
+        public boolean compareAndSetState(int a, int b){
+            return unsafe.compareAndSwapInt(this,state,a,b);
+        }
+
         public Condition getCondition(){
             return condition;
         }
@@ -63,9 +70,5 @@ public class MyLock {
 
     public boolean releaseLock(int num) throws Exception {
         return sync.releaseLock(num);
-    }
-
-    private boolean compareAndSetState() {
-
     }
 }
