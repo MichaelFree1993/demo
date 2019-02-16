@@ -71,4 +71,8 @@ public class MyLock {
     public boolean releaseLock(int num) throws Exception {
         return sync.releaseLock(num);
     }
+
+    public Condition getConditon(){
+        return sync.getCondition();
+    }
 }
