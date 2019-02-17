@@ -13,6 +13,7 @@ public class MyThreadPool implements ThreadPool{
 
     private List<Worker> workerList;
 
+    //一般用阻塞队列更专业
     private LinkedList<Task> taskLinkedList;
 
     //工作线程数量
@@ -22,6 +23,10 @@ public class MyThreadPool implements ThreadPool{
     public MyThreadPool(List<Worker> workerList, LinkedList<Task> taskLinkedList) {
         this.workerList = workerList;
         this.taskLinkedList = taskLinkedList;
+    }
+
+    public void initialWorker(){
+
     }
 
     @Override

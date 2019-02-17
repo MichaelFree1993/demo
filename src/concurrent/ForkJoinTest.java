@@ -16,7 +16,6 @@ public class ForkJoinTest extends RecursiveTask<Integer> {
             //todo
         }else {
             //todo
-            HashMap
         }
 
         return sum;
