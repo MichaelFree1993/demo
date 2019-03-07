@@ -3,7 +3,7 @@ package threadpool;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MyThreadPool implements ThreadPool{
+public class MyThreadPool implements ThreadPool {
 
     private static final int MAX_WORKER_NUMBER = 10;
 
@@ -25,7 +25,10 @@ public class MyThreadPool implements ThreadPool{
         this.taskLinkedList = taskLinkedList;
     }
 
-    public void initialWorker(){
+    /**
+     * 将工作线程初始化
+     */
+    public void initialWorker() {
 
     }
 
@@ -50,13 +53,13 @@ public class MyThreadPool implements ThreadPool{
     }
 
     @Override
-    public int getSize(){
+    public int getSize() {
         return countNum;
     }
 
     @Override
-    public void shutDown(){
-        for(Worker worker : workerList){
+    public void shutDown() {
+        for (Worker worker : workerList) {
             worker.shutDown();
         }
     }

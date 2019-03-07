@@ -12,7 +12,9 @@ public class AsyncTimeServerHandler implements Runnable{
     private CountDownLatch latch;
     private AsynchronousServerSocketChannel asynchronousServerSocketChannel;
 
-    /**构造函数里处理IP和端口连接*/
+    /**
+     * 构造函数里处理IP和端口连接
+     */
     public AsyncTimeServerHandler(int port){
         this.port=port;
         try{
@@ -31,7 +33,9 @@ public class AsyncTimeServerHandler implements Runnable{
     }
 
     private void doAccept(){
-        /**弄清楚accept如何执行的*/
+        /**
+         * 弄清楚accept如何执行的
+         */
         asynchronousServerSocketChannel.accept(this,new AcceptCompletionHandler());
     }
 
